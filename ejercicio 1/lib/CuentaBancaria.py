@@ -24,12 +24,18 @@ class CuentaBancaria:
     def validar_iban(self, iban: str) -> bool:
         patron_iban = r"^[A-Z]{2}\d{22}$"
         patron = re.compile(patron_iban)
-        return bool(patron.match(iban))
+        if patron.match(iban):
+            return True
+        else:
+            return False
 
     def validar_nombre(self, nombre: str) -> bool:
         patron_titular = "^[A-ZÁÉÍÓÚÑ][a-záéíóúñ]+(?: [A-ZÁÉÍÓÚÑ][a-záéíóúñ]+){1,2}$"
         patron = re.compile(patron_titular)
-        return bool(patron.match(nombre))
+        if patron.match(nombre):
+            return True
+        else:
+            return False
 
     @property
     def iban(self) -> str:
