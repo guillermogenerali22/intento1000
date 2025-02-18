@@ -1,4 +1,5 @@
 hola = ["hola", "mundo"]
 
 for palabra in hola:
-    print(palabra)  
+    print(palabra)
+hola.append("adios")
